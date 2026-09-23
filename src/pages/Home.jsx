@@ -1,7 +1,7 @@
 import Categories from "../components/Categories";
 import FeaturedProducts from "../components/FeaturedProduct";
 import Hero from "../components/Hero";
-import Newsletter from "../components/NewsLetter";
+import Newsletter from "../components/Newsletter";
 import PromoBanners from "../components/PromoBanner";
 
 export default function Home() {
