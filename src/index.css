@@ -1,0 +1,39 @@
+:root {
+  --primary: #1a73e8;
+  --dark: #0f1f3d;
+  --light-bg: #eaf3fd;
+  --text: #1c1c1c;
+  --muted: #777;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+  background: #fff;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+.btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn:hover {
+  opacity: 0.9;
+}
+@media (max-width: 600px) {
+  .container {
+    padding: 5px 14px;
+  }
+}

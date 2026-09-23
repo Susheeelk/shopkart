@@ -1,0 +1,45 @@
+.promos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 30px auto;
+}
+.promo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  border-radius: 12px;
+}
+.promo span {
+  font-size: 80px;
+}
+.promo h2 {
+  color: #0a9d6b;
+  margin-bottom: 12px;
+}
+.promo h3 {
+  margin-bottom: 12px;
+}
+.green {
+  background: #d6f5e6;
+}
+.orange {
+  background: #fde3cf;
+}
+.btn-white {
+  background: #fff;
+  border: none;
+  padding: 8px 22px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .promos {
+    grid-template-columns: 1fr;
+  }
+  .promo span {
+    font-size: 56px;
+  }
+}

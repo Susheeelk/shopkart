@@ -1,0 +1,44 @@
+.cats {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px auto;
+}
+.cat {
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+.cat-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #f1f6fc;
+  display: grid;
+  place-items: center;
+  font-size: 36px;
+  margin-bottom: 8px;
+  transition: transform 0.2s;
+}
+.cat:hover .cat-circle {
+  transform: translateY(-4px);
+}
+@media (max-width: 768px) {
+  .cats {
+    overflow-x: auto;
+    gap: 18px;
+    padding-bottom: 8px;
+    justify-content: flex-start;
+  }
+  .cat {
+    flex-shrink: 0;
+  }
+  .cat-circle {
+    width: 70px;
+    height: 70px;
+    font-size: 28px;
+  }
+  .cat p {
+    font-size: 13px;
+  }
+}

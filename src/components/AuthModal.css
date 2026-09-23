@@ -1,0 +1,476 @@
+/* =========================
+   LOGIN OVERLAY
+========================= */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+
+  display: grid;
+  place-items: center;
+
+  padding: 20px;
+
+  background: rgba(15, 31, 61, 0.1);
+
+  z-index: 1000;
+
+  animation: fade 0.3s ease;
+
+  overflow-y: auto;
+}
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.auth-modal {
+  position: relative;
+
+  width: 100%;
+  max-width: 390px;
+
+  max-height: 90vh;
+  overflow-y: auto;
+
+  padding: 38px 30px 30px;
+
+  background: #e7ebf1;
+
+  border-radius: 28px;
+
+  /* Main embossed effect */
+  box-shadow:
+    15px 15px 30px rgba(163, 177, 198, 0.55),
+    -15px -15px 30px rgba(255, 255, 255, 0.95);
+
+  animation: pop 0.35s ease;
+
+  color: var(--text);
+}
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.auth-close {
+  position: absolute;
+
+  top: 16px;
+  right: 16px;
+
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+  place-items: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #e7ebf1;
+
+  color: #555;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  box-shadow:
+    5px 5px 10px rgba(163, 177, 198, 0.45),
+    -5px -5px 10px rgba(255, 255, 255, 0.9);
+
+  transition: 0.2s ease;
+}
+
+.auth-close:hover {
+  color: var(--primary);
+
+  box-shadow:
+    inset 3px 3px 7px rgba(163, 177, 198, 0.45),
+    inset -3px -3px 7px rgba(255, 255, 255, 0.9);
+}
+
+.auth-close:active {
+  transform: scale(0.92);
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.auth-modal h2 {
+  margin: 5px 0 5px;
+
+  text-align: center;
+
+  font-size: 28px;
+  font-weight: 700;
+
+  color: #20242a;
+
+  letter-spacing: 0.3px;
+}
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.auth-sub {
+  margin-bottom: 25px;
+
+  text-align: center;
+
+  color: #737b86;
+
+  font-size: 13px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.auth-modal form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+/* =========================
+   INPUT
+========================= */
+
+.auth-modal input {
+  width: 100%;
+
+  height: 50px;
+
+  padding: 0 16px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #e7ebf1;
+
+  color: #333;
+
+  font-size: 14px;
+
+  outline: none;
+
+  /* Input is pressed inside */
+  box-shadow:
+    inset 5px 5px 10px rgba(163, 177, 198, 0.45),
+    inset -5px -5px 10px rgba(255, 255, 255, 0.95);
+
+  transition: 0.2s ease;
+}
+
+.auth-modal input::placeholder {
+  color: #7c8490;
+}
+
+.auth-modal input:focus {
+  box-shadow:
+    inset 4px 4px 8px rgba(163, 177, 198, 0.45),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.95),
+    0 0 0 2px rgba(26, 115, 232, 0.12);
+}
+
+/* =========================
+   ERROR
+========================= */
+
+.auth-error {
+  padding: 10px 13px;
+
+  border-radius: 10px;
+
+  background: #f8dddd;
+
+  color: #c62828;
+
+  font-size: 13px;
+
+  box-shadow:
+    inset 3px 3px 6px rgba(180, 80, 80, 0.12),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.8);
+}
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+
+.auth-modal .btn {
+  width: 100%;
+
+  height: 52px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 13px;
+
+  background: #e7ebf1;
+
+  color: var(--primary);
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  /* Raised button */
+  box-shadow:
+    7px 7px 14px rgba(163, 177, 198, 0.55),
+    -7px -7px 14px rgba(255, 255, 255, 0.95);
+
+  transition: all 0.2s ease;
+}
+
+.auth-modal .btn:hover {
+  color: #155bb5;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    9px 9px 17px rgba(163, 177, 198, 0.55),
+    -8px -8px 17px rgba(255, 255, 255, 0.95);
+}
+
+.auth-modal .btn:active {
+  transform: translateY(1px);
+
+  box-shadow:
+    inset 5px 5px 10px rgba(163, 177, 198, 0.5),
+    inset -5px -5px 10px rgba(255, 255, 255, 0.9);
+}
+
+.auth-modal .btn:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+/* =========================
+   LOGIN / SIGNUP SWITCH
+========================= */
+
+.auth-switch {
+  margin-top: 20px;
+
+  text-align: center;
+
+  color: #737b86;
+
+  font-size: 13px;
+}
+
+.auth-switch button {
+  margin-left: 4px;
+
+  padding: 4px 8px;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--primary);
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+/* =========================
+   OPTIONAL: REMEMBER / FORGOT
+   Agar JSX me ye classes hain
+========================= */
+
+.auth-options {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin: -3px 2px 2px;
+
+  font-size: 11px;
+
+  color: #68717d;
+}
+
+.auth-options a {
+  color: var(--primary);
+
+  text-decoration: none;
+
+  font-weight: 600;
+}
+
+.auth-options input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+
+  box-shadow: none;
+
+  accent-color: var(--primary);
+}
+
+/* =========================
+   ROUND ICON / LOGO
+   Agar login ke upar icon hai
+========================= */
+
+.auth-icon {
+  width: 72px;
+  height: 72px;
+
+  margin: 0 auto 17px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #e7ebf1;
+
+  font-size: 30px;
+
+  box-shadow:
+    8px 8px 16px rgba(163, 177, 198, 0.5),
+    -8px -8px 16px rgba(255, 255, 255, 0.95);
+}
+
+/* =========================
+   SOCIAL BUTTONS
+   Agar social buttons hain
+========================= */
+
+.social-login {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 14px;
+
+  margin-top: 18px;
+}
+
+.social-login button {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+  place-items: center;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #e7ebf1;
+
+  color: #555;
+
+  cursor: pointer;
+
+  box-shadow:
+    5px 5px 10px rgba(163, 177, 198, 0.5),
+    -5px -5px 10px rgba(255, 255, 255, 0.95);
+
+  transition: 0.2s ease;
+}
+
+.social-login button:hover {
+  color: var(--primary);
+}
+
+.social-login button:active {
+  box-shadow:
+    inset 4px 4px 8px rgba(163, 177, 198, 0.5),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.9);
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+.auth-modal::-webkit-scrollbar {
+  width: 4px;
+}
+
+.auth-modal::-webkit-scrollbar-thumb {
+  background: #c5ccd5;
+
+  border-radius: 10px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+
+    transform: translateY(20px) scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .overlay {
+    padding: 14px;
+  }
+
+  .auth-modal {
+    max-width: 360px;
+
+    padding: 34px 22px 26px;
+
+    border-radius: 25px;
+  }
+
+  .auth-modal h2 {
+    font-size: 25px;
+  }
+
+  .auth-modal input {
+    height: 48px;
+  }
+
+  .auth-modal .btn {
+    height: 50px;
+  }
+}
